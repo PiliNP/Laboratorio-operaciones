@@ -28,18 +28,6 @@ class BOM(db.Model):
     costo = db.Column(db.Float, nullable=False)
     lead_time = db.Column(db.Integer, nullable=False)
 
-class CentroTrabajo(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    linea = db.Column(db.String(100), nullable=False)
-    capacidad_inicial = db.Column(db.Integer, nullable=False)
-    operarios = db.Column(db.Integer, nullable=False)
-    throughput = db.Column(db.Float, nullable=False)
-    costo_extra = db.Column(db.Float, nullable=False)
-    presupuesto_extra = db.Column(db.Float, nullable=False)
-    costo_contratacion = db.Column(db.Float, nullable=False)
-    costo_despido = db.Column(db.Float, nullable=False)
-    salario = db.Column(db.Float, nullable=False)
-
 class MPS(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     producto_id = db.Column(db.Integer, db.ForeignKey('producto.id'), nullable=False)
